@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
+    // 약간의 수정
+
     private Rigidbody rb;
 
      void OnCollisionEnter(Collision col) {
