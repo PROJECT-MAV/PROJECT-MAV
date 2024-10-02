@@ -7,12 +7,21 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "46b6fe8b-c05b-451e-9ca6-7dbd61146fb9",
-                    "expectedControlType": "Vector3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(pressPoint=0.1)",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "4e42c603-e805-4c63-bc46-edcd2e50866c",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -26,28 +35,6 @@
                     "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "21c26f91-526d-4a4f-aae6-ab5000382a62",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "5184a637-9443-4b7f-b810-8070f988e6d4",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "forward",
@@ -70,6 +57,28 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "10140229-a076-45db-86dc-964d0008a195",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec61400a-9153-4604-9396-a4a2c68446ea",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
