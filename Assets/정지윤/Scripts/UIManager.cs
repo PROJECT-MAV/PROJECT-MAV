@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider bgmVolumeSlider;
     public Slider sfxVolumeSlider;
-
+/// ////////////////////////
     public TalkManager talkManager;
     public TextMeshProUGUI talkText;
     public GameObject talkSet;
@@ -52,6 +52,39 @@ public class UIManager : MonoBehaviour
         optionPanel.SetActive(isOptionPanelOn);
 
     }
+
+    public void SetOptionPanelOn()
+    {
+        if(isOptionPanelOn == false)
+            {
+                isOptionPanelOn = true;
+                optionPanel.SetActive(isOptionPanelOn);
+            }
+
+            else
+            {
+                isOptionPanelOn = false;
+                optionPanel.SetActive(isOptionPanelOn);
+            }
+    }
+
+    /*void Update()
+    {
+        if(Input.GetKeyDown("a"))
+        {
+            if(isOptionPanelOn == false)
+            {
+                isOptionPanelOn = true;
+                optionPanel.SetActive(isOptionPanelOn);
+            }
+
+            else
+            {
+                isOptionPanelOn = false;
+                optionPanel.SetActive(isOptionPanelOn);
+            }
+        }
+    }*/
 
     public void SetBgmVolume(float volume)
     {
