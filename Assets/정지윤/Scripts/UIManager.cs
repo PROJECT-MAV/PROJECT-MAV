@@ -12,17 +12,19 @@ public class UIManager : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider bgmVolumeSlider;
     public Slider sfxVolumeSlider;
-/// ////////////////////////
+
     public TalkManager talkManager;
     public TextMeshProUGUI talkText;
     public GameObject talkSet;
     public Image portraitImage;
     public bool isTalking;
+
     public GameObject optionPanel;
     public bool isOptionPanelOn;
-    public int currentSceneIndex;
+    private int currentSceneIndex;
     public int talkIndex;
 
+    
 
     void Awake()
     {
@@ -46,12 +48,40 @@ public class UIManager : MonoBehaviour
 
         bgmVolumeSlider.onValueChanged.AddListener(SetBgmVolume);
         sfxVolumeSlider.onValueChanged.AddListener(SetSfxVolume);
-        /////////////
+        
         isTalking = false;
         isOptionPanelOn = false;
         optionPanel.SetActive(isOptionPanelOn);
 
     }
+
+    void Start()
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void LoadNextScene()
+    {
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        int totalSceneNumber = SceneManager.sceneCountInBuildSettings;
+
+        if(nextSceneIndex < totalSceneNumber)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+    }
+
+    public void LoadPreviousScene()
+    {
+        int prevSceneIndex = currentSceneIndex - 1;
+
+        if(prevSceneIndex >= 0)
+        {
+            SceneManager.LoadScene(prevSceneIndex);
+        }
+    }
+    
 
     public void SetOptionPanelOn()
     {
@@ -68,9 +98,9 @@ public class UIManager : MonoBehaviour
             }
     }
 
-    /*void Update()
+    void Update()
     {
-        if(Input.GetKeyDown("a"))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(isOptionPanelOn == false)
             {
@@ -84,15 +114,23 @@ public class UIManager : MonoBehaviour
                 optionPanel.SetActive(isOptionPanelOn);
             }
         }
-    }*/
+    }
 
     public void SetBgmVolume(float volume)
     {
-        audioMixer.SetFloat("BgmVolume", Mathf.Log10(volume) * 20);
+        if(volume == 0)
+        {
+            audioMixer.SetFloat("BgmVolume", -80f);
+        }
+        else audioMixer.SetFloat("BgmVolume", Mathf.Log10(volume) * 20);
     }
     
     public void SetSfxVolume(float volume)
     {
+        if(volume == 0)
+        {
+            audioMixer.SetFloat("SfxVolume", -80f);
+        }
         audioMixer.SetFloat("SfxVolume", Mathf.Log10(volume) * 20);
     }
 
