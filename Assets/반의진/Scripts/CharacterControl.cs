@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class CharacterControl : MonoBehaviour
 {
-    InputControl playerInput; // InputSystem Script불러오는
+    /* InputControl playerInput; // InputSystem Script불러오는
     CharacterController characterController;
     Animator animator;
 
@@ -119,4 +119,5 @@ public class CharacterControl : MonoBehaviour
         handleRotation();
    
     }
+    */
 }

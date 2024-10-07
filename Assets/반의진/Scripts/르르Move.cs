@@ -5,20 +5,21 @@ using UnityEngine.InputSystem;
 
 public class 르르Move : MonoBehaviour
 {
-    Rigidbody2D ruruBody;
-    PlayerInput playerInput;
-    Player playerInputActions;
+    private Rigidbody2D ruruBody;
+    private PlayerInput playerInput;
+    private 르르InputAction playerInputActions;
 
     float inputHorizontal;
     float moveSpeed = 10f;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
-        playerInputActions = new Player();
-        playerInputActions.Player.Jump.performed += Jump();
         ruruBody = gameObject.GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
+        르르InputAction playerInputActions = new 르르InputAction();
+        playerInputActions.Player.Jump.performed += Jump;
+  
     }
 
     private void FixedUpdate()
@@ -44,13 +45,19 @@ public class 르르Move : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        
-        Debug.Log("르르Moving!");
+        if(context.performed)
+        {
+            Debug.Log("르르Moving!");
+        }
+
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log("Jump!");
+        if(context.performed)
+        {
+            Debug.Log("르르Jumping!");
+        }
     }
 
     public void Flip()

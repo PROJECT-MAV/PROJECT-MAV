@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 0e2edc7cd4637f54c9883c658de5d58f, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 9af6a2ad08fdab8448d47b754f65cf24, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -555,39 +555,31 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1161807406}
-        m_TargetAssemblyTypeName: "\uB974\uB974Move, Assembly-CSharp"
-        m_MethodName: Move
-        m_Mode: 0
+      - m_Target: {fileID: 1161807400}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\uB974\uB974Move"
-          m_BoolArgument: 0
-        m_CallState: 1
-    m_ActionId: 46b6fe8b-c05b-451e-9ca6-7dbd61146fb9
-    m_ActionName: Motion/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/rightArrow,/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1161807406}
-        m_TargetAssemblyTypeName: "\uB974\uB974Move, Assembly-CSharp"
-        m_MethodName: Jump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 4e42c603-e805-4c63-bc46-edcd2e50866c
-    m_ActionName: Motion/Jump[/Keyboard/space]
+    m_ActionId: 4eb57fc9-cdfa-4cf4-86b9-0d7d64a35f1e
+    m_ActionName: Player/Move[/Keyboard/rightArrow,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8fcb12f9-aa4d-458f-8bcb-7b1c8a20fc35
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 54fabb2c-f7b4-426b-842d-f7b9086cb4b8
+    m_ActionName: UI/New action
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: PC
-  m_DefaultActionMap: Motion
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1588335540

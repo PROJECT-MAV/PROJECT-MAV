@@ -1,0 +1,93 @@
+{
+    "name": "르르InputAction",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "2a05f046-3551-48a7-81ba-395618ad2146",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "4eb57fc9-cdfa-4cf4-86b9-0d7d64a35f1e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "8fcb12f9-aa4d-458f-8bcb-7b1c8a20fc35",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8a7f76b6-31f3-47b2-8cbf-39b0a23369d1",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fedb3c6d-4651-4f9a-a430-6aa3473c2d4f",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b0db16d-2918-46af-afb5-00be2f9d5f6e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "23c30286-1a83-4039-80ab-92de75506823",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "54fabb2c-f7b4-426b-842d-f7b9086cb4b8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "92e1e9fe-9c96-4d48-b131-3f18552cdaa0",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
