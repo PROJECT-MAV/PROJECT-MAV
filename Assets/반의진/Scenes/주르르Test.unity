@@ -442,7 +442,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1161807404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -557,22 +557,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1161807406}
         m_TargetAssemblyTypeName: "\uB974\uB974Move, Assembly-CSharp"
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4eb57fc9-cdfa-4cf4-86b9-0d7d64a35f1e
-    m_ActionName: Player/Move[/Keyboard/rightArrow,/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1161807406}
-        m_TargetAssemblyTypeName: "\uB974\uB974Move, Assembly-CSharp"
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -589,6 +573,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 54fabb2c-f7b4-426b-842d-f7b9086cb4b8
     m_ActionName: UI/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7ce95da4-aa1d-4920-bf14-a38404ee58ff
+    m_ActionName: Player/Attack
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a495be37-ae8c-4643-8862-42344253771e
+    m_ActionName: Player/Dance
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 90af8484-1df3-4a8a-a112-8adf1cb98851
+    m_ActionName: Player/Move[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5baf4c6e-8dae-4a74-9f5a-7a125130ef4d
+    m_ActionName: New action map/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
