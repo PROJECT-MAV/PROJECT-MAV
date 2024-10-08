@@ -431,7 +431,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -442,7 +442,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1161807404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 0e2edc7cd4637f54c9883c658de5d58f, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 9af6a2ad08fdab8448d47b754f65cf24, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -557,22 +557,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1161807406}
         m_TargetAssemblyTypeName: "\uB974\uB974Move, Assembly-CSharp"
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\uB974\uB974Move"
-          m_BoolArgument: 0
-        m_CallState: 1
-    m_ActionId: 46b6fe8b-c05b-451e-9ca6-7dbd61146fb9
-    m_ActionName: Motion/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/rightArrow,/Keyboard/leftArrow]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1161807406}
-        m_TargetAssemblyTypeName: "\uB974\uB974Move, Assembly-CSharp"
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -583,11 +567,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 4e42c603-e805-4c63-bc46-edcd2e50866c
-    m_ActionName: Motion/Jump[/Keyboard/space]
+    m_ActionId: 8fcb12f9-aa4d-458f-8bcb-7b1c8a20fc35
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 54fabb2c-f7b4-426b-842d-f7b9086cb4b8
+    m_ActionName: UI/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7ce95da4-aa1d-4920-bf14-a38404ee58ff
+    m_ActionName: Player/Attack
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a495be37-ae8c-4643-8862-42344253771e
+    m_ActionName: Player/Dance
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 90af8484-1df3-4a8a-a112-8adf1cb98851
+    m_ActionName: Player/Move[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5baf4c6e-8dae-4a74-9f5a-7a125130ef4d
+    m_ActionName: New action map/New action
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: PC
-  m_DefaultActionMap: Motion
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1588335540
