@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 740989855}
   m_Layer: 0
   m_Name: Land
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 1161807407}
   - component: {fileID: 1161807406}
   - component: {fileID: 1161807405}
+  - component: {fileID: 1161807408}
   m_Layer: 0
   m_Name: file
   m_TagString: Untagged
@@ -375,8 +376,8 @@ Transform:
   m_GameObject: {fileID: 1161807400}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.108887315, y: -3.26, z: 14.23524}
-  m_LocalScale: {x: 0.54627, y: 0.54627, z: 0.54627}
+  m_LocalPosition: {x: -0.10889, y: -3.35, z: 14.23524}
+  m_LocalScale: {x: 0.6814718, y: 0.6814718, z: 0.6814718}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1588335541}
@@ -413,8 +414,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
-  m_Size: {x: 4.8, y: 17.7}
+  m_Offset: {x: -0.15, y: -0.96}
+  m_Size: {x: 4.8, y: 12.31}
   m_Direction: 0
 --- !u!50 &1161807403
 Rigidbody2D:
@@ -484,7 +485,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f14b7f79f73ee8140b26d634689baf27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9037c177aa3fd8f42999ac8b3e195409, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -505,7 +506,7 @@ Animator:
   m_GameObject: {fileID: 1161807400}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f13a0ee8965514478801cb37687032b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -528,6 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a635f73621a859489ed18145466e9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxJumpCount: 2
 --- !u!114 &1161807407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +596,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1161807408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161807400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e4ee992b5a24442a1136b183fdd32a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 0
+  currentHP: 0
+  armor: 0
+  moveSpeed: 0
+  attack: 0
 --- !u!1 &1588335540
 GameObject:
   m_ObjectHideFlags: 0
