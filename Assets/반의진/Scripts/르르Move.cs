@@ -1,63 +1,77 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(르르Stat))]
 public class 르르Move : MonoBehaviour
 {
     private Rigidbody2D ruruBody;
     private PlayerInput playerInput;
     private 르르InputAction playerInputActions;
+    private SpriteRenderer spriteRenderer;
+    protected 르르Stat ruruStat;
 
-
-    float moveSpeed = 2f;
+    float moveSpeed = 5f;
     bool isFacingRight;
+    bool isJumping;
+    public Vector2 direction { get; private set; }
 
     // Start is called before the first frame update
     private void Awake()
     {
+        ruruStat = GetComponent<르르Stat>();
         ruruBody = gameObject.GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         playerInputActions = new 르르InputAction();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
         playerInputActions.Player.Enable();
         playerInputActions.Player.Jump.performed += Jump;
         playerInputActions.Player.Move.performed += Move;
-        playerInputActions.Player.Move.performed += Flip;
     }
 
 
 
-    private void FixedUpdate()
-    { 
-        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-        ruruBody.AddForce(new Vector2(inputVector.x, 0) * moveSpeed, ForceMode2D.Impulse);
+    void FixedUpdate()
+    {
+        Vector2 input = playerInputActions.Player.Move.ReadValue<Vector2>();
+        direction = new Vector2(input.x, input.y);
+        ruruBody.velocity = direction * moveSpeed + Vector2.up * ruruBody.velocity.y;
+    }    
+
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        
     }
-        void OnEnable()
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
         {
+            isJumping = true;
+            Debug.Log("르르Jumping!");
+            ruruBody.AddForce(Vector3.up * 5f, ForceMode2D.Impulse);
+        }
+    }
 
-
+    public void Flip()
+    {
+        if(direction != Vector2.zero)
+        {
+            Quaternion targetAngle = Quaternion.LookRotation(direction);
+            //ruruBody.rotation = targetAngle;
         }
 
-        void OnDisable()
+        /* if (isFacingRight)
         {
-
+            spriteRenderer.flipX = false;
         }
-
-        public void Move(InputAction.CallbackContext context)
+        else if (!isFacingRight)
         {
-            
-
+            spriteRenderer.flipX = true;
         }
+        */
 
-        public void Jump(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                Debug.Log("르르Jumping!");
-                ruruBody.AddForce(Vector3.up * 5f, ForceMode2D.Impulse);
-            }
-        }
-
-        public void Flip(InputAction.CallbackContext context)
-        {
         /*
             if (inputVector.x == 1)
             {
@@ -68,6 +82,6 @@ public class 르르Move : MonoBehaviour
                 isFacingRight = false;
             }
         */
-        }
-        
     }
+
+}
