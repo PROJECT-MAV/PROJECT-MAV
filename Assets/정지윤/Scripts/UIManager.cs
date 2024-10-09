@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject optionPanel;
     public bool isOptionPanelOn;
-    private int currentSceneIndex;
+    public SceneLoadManager sceneLoadManager;
     public int talkIndex;
 
     
@@ -54,34 +54,6 @@ public class UIManager : MonoBehaviour
         optionPanel.SetActive(isOptionPanelOn);
 
     }
-
-    void Start()
-    {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
-
-    public void LoadNextScene()
-    {
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        int totalSceneNumber = SceneManager.sceneCountInBuildSettings;
-
-        if(nextSceneIndex < totalSceneNumber)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-    }
-
-    public void LoadPreviousScene()
-    {
-        int prevSceneIndex = currentSceneIndex - 1;
-
-        if(prevSceneIndex >= 0)
-        {
-            SceneManager.LoadScene(prevSceneIndex);
-        }
-    }
-    
 
     public void SetOptionPanelOn()
     {

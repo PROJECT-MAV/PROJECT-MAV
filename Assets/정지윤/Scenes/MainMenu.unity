@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1302,8 +1301,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1728460386}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1604649906}
+        m_TargetAssemblyTypeName: SceneLoadManager, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 1
         m_Arguments:
@@ -3040,6 +3039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac631b6a5a660b4fb49bf312dc4ecee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSceneIndex: 0
 --- !u!1 &1608060541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,6 +3321,7 @@ MonoBehaviour:
   isTalking: 0
   optionPanel: {fileID: 375374344}
   isOptionPanelOn: 0
+  sceneLoadManager: {fileID: 1604649906}
   talkIndex: 0
 --- !u!4 &1728460387
 Transform:
