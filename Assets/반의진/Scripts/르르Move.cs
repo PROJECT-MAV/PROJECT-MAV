@@ -4,6 +4,13 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(르르Stat))]
 public class 르르Move : MonoBehaviour
 {
+    [Header("Camera Stuff")]
+    [SerializeField] private GameObject _cameraFollowGO;
+
+    [Header("Move Speed")]
+    [SerializeField] float moveSpeed = 5f;
+
+
     private Rigidbody2D ruruBody;
     private PlayerInput playerInput;
     private 르르InputAction playerInputActions;
@@ -11,12 +18,12 @@ public class 르르Move : MonoBehaviour
     protected 르르Stat ruruStat;
     private Animator ruruAnim;
 
-    float moveSpeed = 5f;
     public int maxJumpCount = 2;
     int jumpCount = 2;
-    bool isFacingRight;
+    public bool isFacingRight;
     bool isJumping;
     bool isWalking;
+    private CameraFollowObject _cameraFollowObject;
 
     public Vector2 direction { get; private set; }
 
@@ -31,6 +38,8 @@ public class 르르Move : MonoBehaviour
         ruruAnim = gameObject.GetComponent<Animator>();
 
         playerInputActions.Player.Enable();
+
+        _cameraFollowObject = _cameraFollowGO.GetComponent<CameraFollowObject>();
         
 
     }
@@ -64,10 +73,14 @@ public class 르르Move : MonoBehaviour
         if (isFacingRight)
         {
             FlipRight();
+            //Turn CameraFollowObject
+            _cameraFollowObject.CallTurn();
+
         }
         else
         {
             FlipLeft();
+            _cameraFollowObject.CallTurn();
         }
     }
 

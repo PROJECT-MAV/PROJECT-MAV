@@ -1,4 +1,4 @@
-/* using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,13 +11,13 @@ public class CameraFollowObject : MonoBehaviour
     [SerializeField] private float _flipYRotationTime = 0.5f;
 
     private Coroutine _turnCorutine;
-    private PlayerPrefs _player;
+    private 르르Move _player;
     private bool _isFacingRight;
     
      private void Awake()
     {
-        _player = _playerTransform.gameObject.GetComponent<PlayerPrefs>();
-        _isFacingRight = _player.IsFacingRight;
+        _player = _playerTransform.gameObject.GetComponent<르르Move>();
+        _isFacingRight = _player.isFacingRight;
     }
 
     private void Update()
@@ -53,7 +53,7 @@ public class CameraFollowObject : MonoBehaviour
     {
         _isFacingRight = !_isFacingRight;
 
-        if(isFacingRight)
+        if(_isFacingRight)
         {
             return 180f;
         }
@@ -63,4 +63,3 @@ public class CameraFollowObject : MonoBehaviour
         }
     }
 }
-*/
