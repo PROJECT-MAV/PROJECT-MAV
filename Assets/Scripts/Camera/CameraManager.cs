@@ -1,4 +1,4 @@
-/* using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -11,7 +11,7 @@ public class CameraManager : MonoBehaviour
     [Header("Controls for lerping the Y Damping during player jump/fall")]
     [SerializeField] private float _fallPanAmount = 0.25f;
     [SerializeField] private float _fallYPanTime = 0.35f;
-    public float _fallSpeedYDampingChangeThreshold = -15f;
+    public float fallSpeedYDampingChangeThreshold = -15f;
 
     public bool IsLerpingYDamping { get; private set; }
     public bool LerpedFromPlayerFalling { get; set; }
@@ -24,6 +24,7 @@ public class CameraManager : MonoBehaviour
     
     private void Awake()
     {
+        _framingTransposer = new CinemachineFramingTransposer();
         if(instance == null)
         {
             instance = this;
@@ -43,7 +44,12 @@ public class CameraManager : MonoBehaviour
         _normYPanAmount = _framingTransposer.m_YDamping;
     }
 
-    public void LearYDamping(bool isPlayerFalling)
+    public void LerpYDamping(bool isPlayerFalling)
+    {
+        _lerpYPanCoroutine = StartCoroutine(LerpYAction(isPlayerFalling));
+    }
+
+    private IEnumerator LerpYAction(bool isPlayerFalling)
     {
         IsLerpingYDamping = true;
 
@@ -72,33 +78,4 @@ public class CameraManager : MonoBehaviour
         }
         IsLerpingYDamping = false;
     }
-
-    private IEnumerator LerpYAction(bool isPlayerFalling)
-    {
-        IsLerpingYDamping = true;
-
-        float startDampAmount = _framingTransposer.m_YDamping;
-        float endDampAmount = 0f;
-
-        if(isPlayerFalling)
-        {
-            endDampAmount = _fallPanAmount;
-            LerpedFromPlayerFalling = true;
-        }
-        else
-        {
-            endDampAmount = _normYPanAmount;
-        }
-
-        float elapsedTime = 0f;
-        while(elapsedTime < _fallYPanTime)
-        {
-            elapsedTime += Time.deltaTime;
-
-            float lerpedPanAmount = Mathf.Lerp(startDampAmount, endDampAmount, (elapsedTime/_fallPanAmount));
-            _framingTransposer.m_YDamping = lerpedPanAmount;
-        }
-        IsLerpingYDamping = false;
-    }
 }
-*/

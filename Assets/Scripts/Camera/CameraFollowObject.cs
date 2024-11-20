@@ -11,12 +11,12 @@ public class CameraFollowObject : MonoBehaviour
     [SerializeField] private float _flipYRotationTime = 0.5f;
 
     private Coroutine _turnCorutine;
-    private 르르Move _player;
+    private PlayerMove _player;
     private bool _isFacingRight;
     
      private void Awake()
     {
-        _player = _playerTransform.gameObject.GetComponent<르르Move>();
+        _player = _playerTransform.gameObject.GetComponent<PlayerMove>();
         _isFacingRight = _player.isFacingRight;
     }
 
@@ -34,7 +34,7 @@ public class CameraFollowObject : MonoBehaviour
     private IEnumerator FlipYLerp()
     {
         float startRotation = transform.localEulerAngles.y;
-        float endRotation = DetermineEndROtation();
+        float endRotation = DetermineEndRotation();
         float yRotation = 0f;
 
         float elapsedTime = 0f;
@@ -49,7 +49,7 @@ public class CameraFollowObject : MonoBehaviour
         }
     }
 
-    private float DetermineEndROtation()
+    private float DetermineEndRotation()
     {
         _isFacingRight = !_isFacingRight;
 
