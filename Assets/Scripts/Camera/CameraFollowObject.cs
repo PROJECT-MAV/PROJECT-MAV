@@ -28,13 +28,14 @@ public class CameraFollowObject : MonoBehaviour
 
     public void CallTurn()
     {
+        Debug.Log("CallTurn");
         _turnCorutine = StartCoroutine(FlipYLerp());
     }
 
     private IEnumerator FlipYLerp()
     {
         float startRotation = transform.localEulerAngles.y;
-        float endRotation = DetermineEndROtation();
+        float endRotation = DetermineEndRotation();
         float yRotation = 0f;
 
         float elapsedTime = 0f;
@@ -49,7 +50,7 @@ public class CameraFollowObject : MonoBehaviour
         }
     }
 
-    private float DetermineEndROtation()
+    private float DetermineEndRotation()
     {
         _isFacingRight = !_isFacingRight;
 
