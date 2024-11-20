@@ -24,7 +24,7 @@ public class CameraManager : MonoBehaviour
     
     private void Awake()
     {
-        _framingTransposer = new CinemachineFramingTransposer();
+        _framingTransposer = gameObject.AddComponent<CinemachineFramingTransposer>();
         if(instance == null)
         {
             instance = this;
