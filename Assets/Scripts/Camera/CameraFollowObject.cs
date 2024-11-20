@@ -11,12 +11,12 @@ public class CameraFollowObject : MonoBehaviour
     [SerializeField] private float _flipYRotationTime = 0.5f;
 
     private Coroutine _turnCorutine;
-    private 르르Move _player;
+    private PlayerMove _player;
     private bool _isFacingRight;
     
      private void Awake()
     {
-        _player = _playerTransform.gameObject.GetComponent<르르Move>();
+        _player = _playerTransform.gameObject.GetComponent<PlayerMove>();
         _isFacingRight = _player.isFacingRight;
     }
 
@@ -28,7 +28,6 @@ public class CameraFollowObject : MonoBehaviour
 
     public void CallTurn()
     {
-        Debug.Log("CallTurn");
         _turnCorutine = StartCoroutine(FlipYLerp());
     }
 

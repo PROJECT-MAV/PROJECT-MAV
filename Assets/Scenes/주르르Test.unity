@@ -777,10 +777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a635f73621a859489ed18145466e9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraFollowGO: {fileID: 1398793140}
-  moveSpeed: 5
-  maxJumpCount: 2
-  isFacingRight: 0
 --- !u!114 &1161807407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,9 +857,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 0
   currentHP: 0
-  armor: 0
-  moveSpeed: 0
   attack: 0
+  armor: 0
+  moveSpeed: 5
+  jumpSpeed: 20
+  rotationSpeed: 0.5
+  maxJumpCount: 2
 --- !u!1 &1398793140
 GameObject:
   m_ObjectHideFlags: 0
