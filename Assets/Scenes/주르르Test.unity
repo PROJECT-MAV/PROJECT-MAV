@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 205663167}
   - component: {fileID: 205663166}
   - component: {fileID: 205663169}
+  - component: {fileID: 205663170}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -338,6 +339,22 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &205663170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205663165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd83644598693f4195b73eba75a7664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allVirtualCameras: []
+  _fallPanAmount: 0.25
+  _fallYPanTime: 0.35
+  fallSpeedYDampingChangeThreshold: -15
 --- !u!1 &442933267
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +892,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1398793142}
   - component: {fileID: 1398793141}
-  - component: {fileID: 1398793143}
   m_Layer: 0
   m_Name: CAMFollowObject
   m_TagString: Untagged
@@ -912,22 +928,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1398793143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398793140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd83644598693f4195b73eba75a7664, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _allVirtualCameras: []
-  _fallPanAmount: 0.25
-  _fallYPanTime: 0.35
-  fallSpeedYDampingChangeThreshold: -15
 --- !u!1 &1588335540
 GameObject:
   m_ObjectHideFlags: 0
