@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/JIYUN/Scenes/MainMenu.unity
     guid: 95638f3f09dcb51478e5d884c6e828b4
   - enabled: 1
-    path: Assets/Scenes/NewGame.unity
+    path: Assets/JIYUN/Scenes/NewGame.unity
     guid: 77ce61e81ed318145ab95461df9611a0
   - enabled: 0
     path: "Assets/\uC815\uC9C0\uC724/Scenes/Option.unity"
     guid: 7ad86bcca57ea1248a6d038d2ea8b3ae
   - enabled: 1
-    path: Assets/Scenes/Title.unity
+    path: Assets/JIYUN/Scenes/Title.unity
     guid: 5fac1ebd1cf3fd84e8534a7fc282a541
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: dfa604a31c7f5124b8cf742bf5c191ac, type: 2}
