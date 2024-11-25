@@ -7,8 +7,8 @@ public class 르르Stat : MonoBehaviour
     public int GetMaxJumpCount {get {return maxJumpCount; } }
     public float GetMaxHP { get { return maxHP; } }
     public float GetCurrentHP { get { return currentHP; } }
-    public float GetAttack { get { return attack; } }
-    public float GetArmor { get { return armor; } }
+    public float GetAttack { get { return atk; } }
+    public float GetArmor { get { return def; } }
     public float GetMoveSpeed { get { return moveSpeed; } }
     public float GetJumpSpeed { get { return jumpSpeed; } }
     public float GetRotationSpeed { get { return rotationSpeed; } }
@@ -16,8 +16,8 @@ public class 르르Stat : MonoBehaviour
     [Header("Player Stats")]
     [SerializeField] protected float maxHP = 100f;
     [SerializeField] protected float currentHP;
-    [SerializeField] protected float attack = 20f;
-    [SerializeField] protected float armor = 15f;
+    [SerializeField] protected float atk = 20f;
+    [SerializeField] protected float def = 15f;
     [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] protected float jumpSpeed = 20f;
     [SerializeField] protected float rotationSpeed = 0.5f;
